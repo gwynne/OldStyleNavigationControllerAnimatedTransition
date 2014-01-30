@@ -28,9 +28,15 @@ And Implement this method:
 	    return animation;
 	}
 */
-@interface OldStyleNavigationControllerAnimatedTransition : NSObject <UIViewControllerAnimatedTransitioning>
 
+@interface OldStyleNavigationControllerAnimatedTransition : NSObject
+#if __IPHONE_OS_VERSION_MIN_REQUIRED > __IPHONE_6_1
+<UIViewControllerAnimatedTransitioning>
+#endif
+
+#if __IPHONE_OS_VERSION_MIN_REQUIRED > __IPHONE_6_1
 // push or pop
 @property (nonatomic, assign) UINavigationControllerOperation operation;
+#endif
 
 @end

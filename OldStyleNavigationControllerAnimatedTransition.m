@@ -13,11 +13,14 @@
 - (id)init {
     self = [super init];
     if (self) {
+#if __IPHONE_OS_VERSION_MIN_REQUIRED > __IPHONE_6_1
         _operation = UINavigationControllerOperationPush;
+#endif
     }
     return self;
 }
 
+#if __IPHONE_OS_VERSION_MIN_REQUIRED > __IPHONE_6_1
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext;
 {
     return 0.35;
@@ -52,7 +55,7 @@
         [transitionContext completeTransition:YES];
     }];
 }
-
+#endif
 
 
 @end
