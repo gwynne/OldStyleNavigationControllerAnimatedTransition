@@ -30,11 +30,11 @@ And Implement this method:
 */
 
 @interface OldStyleNavigationControllerAnimatedTransition : NSObject
-#if __IPHONE_OS_VERSION_MIN_REQUIRED > __IPHONE_6_1
+#ifdef __IPHONE_7_0
 <UIViewControllerAnimatedTransitioning>
 #endif
 
-#if __IPHONE_OS_VERSION_MIN_REQUIRED > __IPHONE_6_1
+#ifdef __IPHONE_7_0
 // push or pop
 @property (nonatomic, assign) UINavigationControllerOperation operation;
 #endif
